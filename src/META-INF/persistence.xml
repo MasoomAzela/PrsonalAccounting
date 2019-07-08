@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="default">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <!-- Configuring JDBC properties -->
+            <property name="hibernate.connection.url"
+                      value="jdbc:mysql://localhost:3306/pa?useUnicode=yes&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value=""/>
+
+            <!--<property name="hibernate.connection.url"
+                      value="jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=127.0.0.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl)))"/>
+            <property name="hibernate.connection.driver_class" value="oracle.jdbc.OracleDriver"/>
+            <property name="hibernate.connection.username" value="mssp_v2_test"/>
+            <property name="hibernate.connection.password" value="public"/>-->
+
+            <!-- EHCACHE -->
+            <!--<property name="hibernate.cache.use_second_level_cache" value="true"/>
+            <property name="hibernate.cache.region.factory_class"
+                      value="org.hibernate.cache.ehcache.EhCacheRegionFactory"/>
+            <property name="net.sf.ehcache.configurationResourceName" value="META-INF/ehcache.xml" />-->
+            <!--<property name="cache" value="read-only" />-->
+
+            <!-- Hibernate properties -->
+            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle8iDialect"/>-->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDB53Dialect"/>
+            <property name="hibernate.archive.autodetection" value="class"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="false"/>
+
+            <!--<property name="hibernate.hbm2ddl.auto" value="create-drop"/>-->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+
+            <!-- Configuring Connection Pool -->
+            <property name="hibernate.c3p0.min_size" value="1"/>
+            <property name="hibernate.c3p0.max_size" value="20"/>
+            <property name="hibernate.c3p0.acquire_increment" value="1"/>
+            <property name="hibernate.c3p0.timeout" value="500"/>
+            <property name="hibernate.c3p0.max_statements" value="50"/>
+            <property name="hibernate.c3p0.idle_test_period" value="2000"/>
+            <property name="hibernate.c3p0.privilegeSpawnedThreads" value="true"/>
+            <property name="hibernate.c3p0.contextClassLoaderSource" value="library"/>
+
+        </properties>
+    </persistence-unit>
+
+</persistence>
