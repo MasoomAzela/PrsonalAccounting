@@ -14,6 +14,8 @@ public class Authentication extends AbstractEntity {
     private String userName;
     private String password;
     private String salt;
+  //  private Role role;
+
     private boolean activationMode;
 
     public Authentication() {
@@ -75,6 +77,16 @@ public class Authentication extends AbstractEntity {
     public void setSalt(String salt) {
         this.salt = salt;
     }
+
+    /*@Basic
+    @Column(name = "role")
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }*/
 
     @Basic
     @Column(name = "active")

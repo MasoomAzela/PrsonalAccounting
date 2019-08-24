@@ -14,7 +14,6 @@ import java.io.IOException;
 public class DashboardController extends BaseController {
 
     @Override
-
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         HttpSession httpSession = req.getSession();

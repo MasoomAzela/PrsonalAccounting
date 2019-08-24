@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.uni.pa.constants.RequestAttributeConstants" %><%--
   Created by IntelliJ IDEA.
   User: MASOOM
   Date: 5/17/2019
@@ -11,6 +11,12 @@
     <title>Personal Accounting - Registration page</title>
 </head>
 <body>
+<%
+    if (request.getAttribute(RequestAttributeConstants.errorFlag) != null) {
+%>
+<%=request.getAttribute(RequestAttributeConstants.errorFlag)%>
+<%
+    }%>
 
 <form action="/registration" method="post">
     <input name="f_Name" type="text" id="firstname" placeholder="Firstname"/>
@@ -24,6 +30,8 @@
     <input name="username" type="text" id="username" placeholder="Username"/>
     <br>
     <input name="password" type="password" id="password" placeholder="Password"/>
+    <br>
+    <input name="role_id" type="number" id="role_id" placeholder="RoleId"/>
     <br>
     <button name="submit" type="submit">Register</button>
 </form>

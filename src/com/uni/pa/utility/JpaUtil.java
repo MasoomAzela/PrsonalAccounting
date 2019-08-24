@@ -38,6 +38,7 @@ public class JpaUtil {
             return this.entityManagerFactory.createEntityManager();
         } catch (Exception ex) {
             ex.printStackTrace();
+            ex.getMessage();
             //LogFactory.getLogger(this.getClass()).error("", ex);
             return null;
         }

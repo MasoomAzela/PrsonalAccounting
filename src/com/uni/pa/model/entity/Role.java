@@ -11,12 +11,12 @@ public class Role extends AbstractEntity {
     private int id;
     private String name;
     private String description;
-    private String [] permissions;
+    private List<PermissionParam> permissions;
 
     public Role() {
     }
 
-    public Role(String name, String description, String [] permissions) {
+    public Role(String name, String description, List<PermissionParam> permissions) {
         this.name = name;
         this.description = description;
         this.permissions = permissions;
@@ -32,6 +32,7 @@ public class Role extends AbstractEntity {
     public void setId(int id) {
         this.id = id;
     }
+
     @Basic
     @Column(name = "name")
     public String getName() {
@@ -41,6 +42,7 @@ public class Role extends AbstractEntity {
     public void setName(String roleName) {
         this.name = roleName;
     }
+
     @Basic
     @Column(name = "description")
     @Lob
@@ -52,15 +54,14 @@ public class Role extends AbstractEntity {
         this.description = roleDescription;
     }
 
-    @Basic
-    @Column(name = "permission")
-    //@Enumerated(EnumType.STRING)
-   // @ElementCollection
-    public String [] getPermissions() {
+    //@Column(name = "permissions")
+    @Enumerated(EnumType.STRING)
+    @ElementCollection
+    public List<PermissionParam> getPermissions() {
         return permissions;
     }
 
-    public void setPermissions(String [] permissions) {
+    public void setPermissions(List<PermissionParam> permissions) {
         this.permissions = permissions;
     }
 }

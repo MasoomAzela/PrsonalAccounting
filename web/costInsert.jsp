@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Personal Accounting - Goods insert page</title>
+    <title>Personal Accounting - Cost insert page</title>
 </head>
 <body>
-Goods inserted successfully.
+Cost inserted successfully.
 </body>
 </html>

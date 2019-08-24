@@ -1,5 +1,6 @@
 package com.uni.pa.database.dao;
 
+import com.uni.pa.exception.DoesnotExistUserException;
 import com.uni.pa.utility.DBProcess;
 import com.uni.pa.model.entity.AbstractEntity;
 
@@ -28,13 +29,14 @@ public abstract class BaseDao<T extends AbstractEntity> {
         this.dbProcess = dbProcess;
     }
 
-    public T findById(int id) {
+    public T findById(int id) throws DoesnotExistUserException {
         try {
             T result = getDbProcess().getEntityManager().find(this.aClass, id);
             getDbProcess().getEntityManager().detach(result);
             return result;
         } catch (Exception e) {
-            throw e;
+            e.printStackTrace();
+            throw new DoesnotExistUserException();
         }
     }
 

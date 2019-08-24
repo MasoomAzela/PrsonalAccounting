@@ -10,6 +10,7 @@ import com.uni.pa.model.entity.CostTitle;
 import com.uni.pa.model.entity.User;
 import com.uni.pa.utility.DBProcess;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class CostInsertionBL extends BaseBL {
@@ -52,7 +53,7 @@ public class CostInsertionBL extends BaseBL {
         return addedBy;
     }
 
-    public void insert(CostTitle subject, long price, Date buyDate, User payer, User addedBy, String description) {
+    public void insert(CostTitle subject, long price, Timestamp buyDate, User payer, User addedBy, String description) {
 
         DBProcess dbProcess = new DBProcess();
         CostDao costDao = new CostDao(dbProcess);
